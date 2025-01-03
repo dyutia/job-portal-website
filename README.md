@@ -1,8 +1,24 @@
-# React + Vite
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dyutia/job-portal-website.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd job-portal-website
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Running the App
+To start the development server, run:
+```bash
+npm run dev
+```
 
-Currently, two official plugins are available:
+The application will be available at `http://localhost:5173/` by default.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
