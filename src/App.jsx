@@ -1,10 +1,11 @@
 import React from "react";
 import PostLists from "./components/PostLists";
+import ApplyForm from "./components/ApplyForm";
 
 const App = () => {
 	return (
 		<>
-			<PostLists />
+			<ApplyForm></ApplyForm>
 		</>
 	);
 };
