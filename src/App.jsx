@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import PostLists from "./components/PostLists";
 
 const App = () => {
-  return (
-    <div>
-      <h1 className='text-green-400'>Job-Portal-Website</h1>
-    </div>
-  )
-}
+	return (
+		<>
+			<PostLists />
+		</>
+	);
+};
 
-export default App
+export default App;
