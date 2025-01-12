@@ -1,8 +1,15 @@
 import React from "react";
+import JobHeader from "./JobHeader";
+import { useNavigate } from "react-router-dom";
 
 const Job = ({ company }) => {
+	const navigate = useNavigate();
+	const handleApply = () => {
+		navigate("/apply-form");
+	};
+
 	return (
-		<div className="border-2 mb-6 border-gray-100 w-full h-64 rounded-xl hover:shadow-xl  duration-300">
+		<div className="border-2 mb-6 border-gray-100 w-full h-64 rounded-xl hover:shadow-xl bg-white duration-300">
 			<div className="p-6">
 				<div className="flex justify-between">
 					<div className="flex">
@@ -57,7 +64,10 @@ const Job = ({ company }) => {
 					<img className="w-5" src="/pics/location.png"></img>
 					<span className="text-gray-400 text-lg">{company.location}</span>
 				</div>
-				<button className="bg-green-600  pl-4 pr-4 pt-1 pb-1 hover:bg-green-700 duration-300 rounded-lg text-white font-semibold ">
+				<button
+					onClick={handleApply}
+					className="bg-green-600  pl-4 pr-4 pt-1 pb-1 hover:bg-green-700 duration-300 rounded-lg text-white font-semibold "
+				>
 					Apply Now
 				</button>
 			</div>
