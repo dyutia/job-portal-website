@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import JobLists from "./components/JobLists";
-import PostJob from "./components/PostJob";
-import JobListProvider from "./store/job-lists-store";
-import Filter from "./components/Filter";
-import JobHeader from "./components/JobHeader";
 
-const App = () => {
-	return <JobListProvider></JobListProvider>;
-};
-
-export default App;
-=======
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
@@ -34,4 +21,3 @@ export default function App() {
     </AuthProvider>
   )
 }
->>>>>>> bf4b219cae034b9bd0de9ba351f70ef69989935f
