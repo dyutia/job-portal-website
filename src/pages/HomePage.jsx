@@ -1,5 +1,6 @@
 import React from 'react';
 import { Briefcase, MapPin } from 'lucide-react';
+import Footer from '../components/Footer';
 
 export default function HomePage() {
   return (
@@ -70,6 +71,7 @@ export default function HomePage() {
           className="w-full h-auto"
         />
       </div>
+      
     </main>
   );
 }

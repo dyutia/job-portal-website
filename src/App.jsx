@@ -6,6 +6,8 @@ import Header from './components/Header'
 import HomePage from './pages/HomePage'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Footer from './components/Footer'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
@@ -16,7 +18,9 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <Footer/>
       </div>
     </AuthProvider>
   )

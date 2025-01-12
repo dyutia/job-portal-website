@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search } from 'lucide-react';
+import { Search, Settings, LogOut, User, ChevronDown } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import { ProfileIcon } from '../icons/ProfileIcon';
 
 export default function Header() {
   const { user, logout } = useAuth();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -31,7 +47,7 @@ export default function Header() {
           <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
             Pages
           </a>
-          <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+          <a href="/contact" className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
             Contact
           </a>
         </nav>
@@ -46,14 +62,43 @@ export default function Header() {
             />
           </div>
           {user ? (
-            <div className="flex items-center gap-3">
-              <ProfileIcon className="h-8 w-8 text-gray-600" />
+            <div className="relative" ref={dropdownRef}>
               <button
-                onClick={logout}
-                className="text-sm text-gray-600 hover:text-gray-900"
+                onClick={toggleDropdown}
+                className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 rounded-full"
               >
-                Logout
+                <img
+                  src={user.photoURL || "https://via.placeholder.com/40"}
+                  alt="Profile"
+                  className="h-8 w-8 rounded-full"
+                />
+                <ChevronDown className="h-4 w-4 text-gray-500" />
               </button>
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5">
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-500 hover:text-white"
+                  >
+                    <User className="inline-block mr-2 h-4 w-4" />
+                    Profile
+                  </Link>
+                  <Link
+                    to="/settings"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-500 hover:text-white"
+                  >
+                    <Settings className="inline-block mr-2 h-4 w-4" />
+                    Settings
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-emerald-500 hover:text-white"
+                  >
+                    <LogOut className="inline-block mr-2 h-4 w-4" />
+                    Logout
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <Link 
@@ -68,3 +113,4 @@ export default function Header() {
     </header>
   );
 }
+
