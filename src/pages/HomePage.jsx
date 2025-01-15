@@ -2,6 +2,7 @@ import React, { useContext, useRef } from "react";
 import { Briefcase, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { JobList } from "../store/job-lists-store";
+import Footer from "../components/Footer";
 
 export default function HomePage() {
 	const { filter } = useContext(JobList);

@@ -9,6 +9,8 @@ import JobPage from "./components/JobPage";
 import ApplyForm from "./components/ApplyForm";
 import JobListProvider from "./store/job-lists-store";
 import PostJob from "./components/PostJob";
+import Footer from "./components/Footer";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
 	return (
@@ -23,7 +25,9 @@ export default function App() {
 						<Route path="/jobs" element={<JobPage />} />
 						<Route path="/apply-form" element={<ApplyForm />} />
 						<Route path="/post-job" element={<PostJob />} />
+						<Route path="/contact" element={<ContactPage />} />
 					</Routes>
+					<Footer />
 				</div>
 			</JobListProvider>
 		</AuthProvider>
