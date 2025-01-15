@@ -56,7 +56,7 @@ const PostJob = () => {
 
 	return (
 		<div className=" pb-80">
-			<div className="w-1/2  m-auto mt-28 rounded-full">
+			<div className="w-1/2   border-2 border-emerald-100  shadow-xl m-auto mt-28 rounded-xl">
 				<form className="p-6 bg-white rounded-xl" onSubmit={handleSubmit}>
 					<span className="font-semibold ">Job Title:</span>
 					<div className="mt-3 mb-3">

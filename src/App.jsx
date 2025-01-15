@@ -16,7 +16,7 @@ export default function App() {
 	return (
 		<AuthProvider>
 			<JobListProvider>
-				<div className="min-h-screen bg-gradient-to-b from-emerald-600/20">
+				<div className="min-h-screen">
 					<Header />
 					<Routes>
 						<Route path="/" element={<HomePage />} />

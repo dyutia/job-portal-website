@@ -9,9 +9,9 @@ const JobPage = () => {
 	return (
 		<>
 			<JobHeader />
-			<div className="flex mt-20 ">
+			<div className="flex mt-12 h-3/5  mb-56 ">
 				<Filter />
-				<div className="w-4/6  h-screen m-5 p-5">
+				<div className="w-4/6 overflow-y-auto h-screen m-5 p-5">
 					{jobList.map((job) => (
 						<Job key={job.id} company={job} />
 					))}

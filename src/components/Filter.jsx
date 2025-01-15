@@ -2,7 +2,7 @@ import React from "react";
 
 const Filter = () => {
 	return (
-		<div className=" border-2 border-gray-100 rounded-lg mt-10 mr-10 ml-32 w-1/4 bg-white">
+		<div className=" border-2 border-gray-100 rounded-lg mt-10 mr-10 ml-32 w-1/4 bg-white ">
 			<form className="p-6">
 				<span className="font-semibold ">Search Company</span>
 				<div className=" mt-3 mb-3 flex items-center border-2  border-gray-100 rounded-ms w-full h-10">
@@ -48,10 +48,6 @@ const Filter = () => {
 					<div className="flex items-center mb-2">
 						<input className="h-4 w-4 mr-3" type="checkbox"></input>
 						<span className="text-gray-400">Remote</span>
-					</div>
-					<div className="flex items-center mb-2">
-						<input className="h-4 w-4 mr-3" type="checkbox"></input>
-						<span className="text-gray-400">Hourly Basis</span>
 					</div>
 				</div>
 				<span className="font-semibold ">Salary</span>

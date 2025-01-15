@@ -15,17 +15,14 @@ const Job = ({ company }) => {
 					<div className="flex">
 						<img
 							className="w-14  border-2 border-opacity-5 p-2 rounded-lg mr-4"
-							src="/pics/facebook-logo.png"
+							src={company.logo}
 						></img>
 						<div>
-							<p>
-								<a
-									href="https://about.fb.com/company-info./"
-									target="blank"
-									className="font-semibold text-lg hover:text-green-600 duration-300 mr-1"
-								>
-									{company.name}
-								</a>
+							<p
+								className="font-semibold cursor-pointer text-lg hover:text-green-600
+								duration-300 mr-1"
+							>
+								{company.name}
 							</p>
 							<p>
 								<span className="text-green-600 text-xs font-bold bg-green-100 pl-2 pr-2 pt-1 pb-1 rounded-2xl mr-1">
@@ -61,7 +58,7 @@ const Job = ({ company }) => {
 				</div>
 				<button
 					onClick={handleApply}
-					className="bg-emerald-500  pl-4 pr-4 pt-1 pb-1 hover:bg-green-700 duration-300 rounded-lg text-white font-semibold "
+					className="bg-emerald-500  pl-4 pr-4 pt-1 pb-1 hover:bg-emerald-600 duration-300 rounded-lg text-white font-semibold "
 				>
 					Apply Now
 				</button>

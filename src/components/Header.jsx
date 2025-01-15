@@ -46,24 +46,25 @@ export default function Header() {
 					>
 						Home
 					</Link>
-					<a
-						href="#"
+					<Link
+						to="/jobs"
 						className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
 					>
 						Jobs
-					</a>
-					<a
-						href="#"
-						className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-					>
-						Pages
-					</a>
-					<a
-						href="/contact"
+					</Link>
+
+					<Link
+						to="/contact"
 						className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
 					>
 						Contact
-					</a>
+					</Link>
+					<Link
+						to="/post-job"
+						className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+					>
+						Add Job
+					</Link>
 				</nav>
 
 				<div className="flex items-center gap-4">

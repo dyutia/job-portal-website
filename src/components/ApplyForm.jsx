@@ -2,9 +2,8 @@ import React from "react";
 
 const ApplyForm = () => {
 	return (
-		<div className="bg-green-100 pb-80">
-			<div className="bg-green-600  h-80">top</div>
-			<div className="w-1/2  m-auto mt-28 rounded-full">
+		<div className="  pb-80">
+			<div className="w-1/2  border-2 border-emerald-100  shadow-xl  p-4 m-auto mt-28 rounded-xl">
 				<form className="p-6 bg-white rounded-xl">
 					<span className="font-semibold ">Categories</span>
 					<div className="mt-3 mb-3">
