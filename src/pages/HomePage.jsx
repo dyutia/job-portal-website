@@ -11,7 +11,7 @@ export default function HomePage() {
 
 	const handleSearch = () => {
 		const title = jobTitle.current.value.toLowerCase();
-		const location = jobLocation.current.value;
+		const location = jobLocation.current.value.toLowerCase();
 
 		filter(title, location);
 		navigate("/jobs");

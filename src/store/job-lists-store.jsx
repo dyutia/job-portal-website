@@ -18,7 +18,7 @@ const jobListReducer = (currJobList, action) => {
 				: true;
 
 			const matchesLocation = action.payload.location
-				? job.location.includes(action.payload.location)
+				? job.location.toLowerCase().includes(action.payload.location)
 				: true;
 
 			return matchesTitle && matchesLocation;
@@ -96,8 +96,8 @@ const DEFAULT_POST_LIST = [
 		name: "Facebook",
 		type: "Full Time",
 		time: "1 to 7 months",
-		minSalary: 43,
-		maxSalary: 78,
+		minSalary: 55,
+		maxSalary: 60,
 		description: "hjgcjkdgbcgjkdbcjkb",
 		location: "Mumbai",
 		skills: ["REACT ", "CSS ", "JS", "GITHUB"],

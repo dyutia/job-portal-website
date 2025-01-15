@@ -2,7 +2,7 @@ import React from "react";
 
 const Filter = () => {
 	return (
-		<div className=" border-2 border-gray-100 rounded-lg mt-10 mr-2 ml-32 w-1/4 bg-white">
+		<div className=" border-2 border-gray-100 rounded-lg mt-10 mr-10 ml-32 w-1/4 bg-white">
 			<form className="p-6">
 				<span className="font-semibold ">Search Company</span>
 				<div className=" mt-3 mb-3 flex items-center border-2  border-gray-100 rounded-ms w-full h-10">
@@ -70,7 +70,7 @@ const Filter = () => {
 						<span className="text-gray-400">more than 25k</span>
 					</div>
 				</div>
-				<button className="bg-green-600 text-white font-semibold w-full h-10 rounded-md hover:bg-green-700 duration-300">
+				<button className="bg-emerald-500 text-white font-semibold w-full h-10 rounded-md hover:bg-emerald-600 duration-300">
 					Apply Filter
 				</button>
 			</form>
