@@ -9,7 +9,7 @@ const JobHeader = () => {
 					A platform where you can get your desired job without any hassle.
 				</p>
 			</div>
-			<img className=" mr-28 w-96 object-cover " src="/pics/jobspage.png" />
+			<img className=" mr-28 w-1/3 object-cover " src="/pics/jobspage.png" />
 		</div>
 	);
 };

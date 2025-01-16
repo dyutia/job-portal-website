@@ -8,11 +8,11 @@ export const JobList = createContext({
 
 const jobListReducer = (currJobList, action) => {
 	let newJobList = currJobList;
-	console.log(newJobList);
 	if (action.type === "ADD_JOB") {
 		newJobList = [action.payload, ...currJobList];
 	} else if (action.type === "FILTER") {
 		newJobList = currJobList.filter((job) => {
+			console.log(action.payload.title);
 			const matchesTitle = action.payload.title
 				? job.title.toLowerCase().includes(action.payload.title)
 				: true;
@@ -24,7 +24,6 @@ const jobListReducer = (currJobList, action) => {
 			return matchesTitle && matchesLocation;
 		});
 	}
-	console.log(newJobList);
 	return newJobList;
 };
 
@@ -312,6 +311,146 @@ const DEFAULT_POST_LIST = [
 			"Troubleshooting",
 			"Customer Support",
 		],
+	},
+
+	{
+		id: "16",
+		title: "Frontend Developer",
+		name: "Google",
+		type: "Part Time",
+		time: "3 months",
+		minSalary: 45,
+		maxSalary: 85,
+		logo: "/pics/google.png",
+		description:
+			"Seeking a Frontend Developer with strong JavaScript and CSS skills.",
+		location: "Delhi",
+		skills: ["HTML", "CSS", "JavaScript", "React"],
+	},
+	{
+		id: "17",
+		title: "Backend Developer",
+		name: "Amazon",
+		type: "Remote",
+		time: "9 months",
+		minSalary: 65,
+		maxSalary: 130,
+		logo: "/pics/amazon.png",
+		description:
+			"Backend Developer needed with experience in APIs and database management.",
+		location: "Bangalore",
+		skills: ["Node.js", "Express", "SQL", "MongoDB", "AWS"],
+	},
+	{
+		id: "18",
+		title: "UI Designer",
+		name: "Netflix",
+		type: "Part Time",
+		time: "4 months",
+		minSalary: 38,
+		maxSalary: 65,
+		logo: "/pics/netflix.png",
+		description:
+			"Looking for a creative UI Designer to enhance the user interface.",
+		location: "Pune",
+		skills: ["Adobe XD", "Sketch", "Wireframing", "Prototyping"],
+	},
+	{
+		id: "19",
+		title: "Data Analyst",
+		name: "Microsoft",
+		type: "Freelancing",
+		time: "1 year",
+		minSalary: 80,
+		maxSalary: 150,
+		logo: "/pics/microsoft.png",
+		description:
+			"Data Analyst required for advanced data visualization and reporting.",
+		location: "Chennai",
+		skills: ["Excel", "SQL", "Tableau", "Power BI"],
+	},
+	{
+		id: "20",
+		title: "DevOps Engineer",
+		name: "Flipkart",
+		type: "Full Time",
+		time: "1 year",
+		minSalary: 75,
+		maxSalary: 120,
+		logo: "/pics/flipkart.png",
+		description: "DevOps Engineer required to manage scalable cloud solutions.",
+		location: "Hyderabad",
+		skills: ["Docker", "Kubernetes", "Terraform", "AWS", "Linux"],
+	},
+	{
+		id: "21",
+		title: "Mobile App Developer",
+		name: "Zomato",
+		type: "Part Time",
+		time: "3 months",
+		minSalary: 50,
+		maxSalary: 90,
+		logo: "/pics/zomato.png",
+		description:
+			"Mobile App Developer needed for restaurant app interface upgrades.",
+		location: "Mumbai",
+		skills: ["React Native", "Flutter", "Kotlin", "Swift"],
+	},
+	{
+		id: "22",
+		title: "Cybersecurity Analyst",
+		name: "TCS",
+		type: "Full Time",
+		time: "2 years",
+		minSalary: 95,
+		maxSalary: 160,
+		logo: "/pics/tcs.png",
+		description:
+			"Cybersecurity Analyst required to strengthen threat defense systems.",
+		location: "Noida",
+		skills: ["Firewalls", "Penetration Testing", "SIEM", "Ethical Hacking"],
+	},
+	{
+		id: "23",
+		title: "AI Researcher",
+		name: "Microsoft",
+		type: "Remote",
+		time: "6 months",
+		minSalary: 130,
+		maxSalary: 240,
+		logo: "/pics/microsoft.png",
+		description:
+			"AI Researcher needed to enhance machine learning applications.",
+		location: "Bangalore",
+		skills: ["Python", "PyTorch", "TensorFlow", "Deep Learning"],
+	},
+	{
+		id: "24",
+		title: "Cloud Solutions Engineer",
+		name: "IBM",
+		type: "Remote",
+		time: "1 year",
+		minSalary: 90,
+		maxSalary: 135,
+		logo: "/pics/ibm.png",
+		description:
+			"Cloud Solutions Engineer required for secure cloud infrastructure.",
+		location: "Delhi",
+		skills: ["AWS", "Google Cloud", "Azure", "DevOps", "Kubernetes"],
+	},
+	{
+		id: "25",
+		title: "Blockchain Developer",
+		name: "Coinbase",
+		type: "Part Time",
+		time: "9 months",
+		minSalary: 110,
+		maxSalary: 180,
+		logo: "/pics/coinbase.png",
+		description:
+			"Blockchain Developer needed for decentralized application updates.",
+		location: "Mumbai",
+		skills: ["Solidity", "Ethereum", "JavaScript", "Smart Contracts"],
 	},
 ];
 

@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
+import StateContext from "../store/state-list-store";
 
 const Filter = () => {
+	const statesOfIndia = useContext(StateContext);
+
+	const handleApplyFilter = () => {};
+
 	return (
 		<div className=" border-2 border-gray-100 rounded-lg mt-10 mr-10 ml-32 w-1/4 bg-white ">
-			<form className="p-6">
+			<div className="p-6">
 				<span className="font-semibold ">Search Company</span>
 				<div className=" mt-3 mb-3 flex items-center border-2  border-gray-100 rounded-ms w-full h-10">
 					<img className="w-4 h-4 m-4" src="/pics/search.png"></img>
@@ -17,18 +22,25 @@ const Filter = () => {
 
 				<span className="font-semibold ">Categories</span>
 				<div className="mt-3 mb-3">
-					<select class=" border-2 focus:outline-none border-gray-100 rounded-ms w-full h-10 ">
-						<option value="option1">Web Development</option>
-						<option value="option2">Web Designing</option>
-						<option value="option3">Market Analysis</option>
-					</select>
+					<input
+						placeholder="eg.web development"
+						class="pl-4 border-2 focus:outline-none border-gray-100 rounded-ms w-full h-10 "
+					/>
 				</div>
 				<span className="font-semibold ">Location</span>
 				<div className="mt-3 mb-3">
-					<select class=" border-2 focus:outline-none border-gray-100 rounded-ms w-full h-10 ">
-						<option value="option1">Mumbai</option>
-						<option value="option2">Madhya Pradesh</option>
-						<option value="option3">Delhi</option>
+					<select
+						defaultValue=""
+						class=" border-2 focus:outline-none border-gray-100 rounded-ms w-full h-10 "
+					>
+						<option value="" disabled>
+							Select location...
+						</option>
+						{statesOfIndia.map((state) => (
+							<option key={state} value={state}>
+								{state}
+							</option>
+						))}
 					</select>
 				</div>
 				<span className="font-semibold ">Job Types</span>
@@ -66,10 +78,13 @@ const Filter = () => {
 						<span className="text-gray-400">more than 25k</span>
 					</div>
 				</div>
-				<button className="bg-emerald-500 text-white font-semibold w-full h-10 rounded-md hover:bg-emerald-600 duration-300">
+				<button
+					onClick={handleApplyFilter}
+					className="bg-emerald-500 text-white font-semibold w-full h-10 rounded-md hover:bg-emerald-600 duration-300"
+				>
 					Apply Filter
 				</button>
-			</form>
+			</div>
 		</div>
 	);
 };

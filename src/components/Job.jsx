@@ -40,7 +40,10 @@ const Job = ({ company }) => {
 				</div>
 				<div className="text-gray-400 mt-3 mb-3">{company.description}</div>
 				{company.skills.map((skill) => (
-					<span className="bg-gray-100 font-semibold text-xs pl-3 pr-3 pt-1 pb-1 mr-2 rounded-2xl ">
+					<span
+						key={skill}
+						className="bg-gray-100 font-semibold text-xs pl-3 pr-3 pt-1 pb-1 mr-2 rounded-2xl "
+					>
 						{skill.toUpperCase()}
 					</span>
 				))}

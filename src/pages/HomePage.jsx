@@ -2,10 +2,12 @@ import React, { useContext, useRef } from "react";
 import { Briefcase, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { JobList } from "../store/job-lists-store";
-import Footer from "../components/Footer";
+import StateContext from "../store/state-list-store";
 
 export default function HomePage() {
 	const { filter } = useContext(JobList);
+	const statesOfIndia = useContext(StateContext);
+
 	const navigate = useNavigate();
 	const jobTitle = useRef();
 	const jobLocation = useRef();
@@ -13,6 +15,7 @@ export default function HomePage() {
 	const handleSearch = () => {
 		const title = jobTitle.current.value.toLowerCase();
 		const location = jobLocation.current.value.toLowerCase();
+		console.log(title, location);
 
 		filter(title, location);
 		navigate("/jobs");
@@ -54,9 +57,11 @@ export default function HomePage() {
 									<option value="" disabled>
 										Select location...
 									</option>
-									<option value="Mumbai">Mumbai</option>
-									<option value="Madhya Pradesh">Madhya Pradesh</option>
-									<option value="Delhi">Delhi</option>
+									{statesOfIndia.map((state) => (
+										<option key={state} value={state}>
+											{state}
+										</option>
+									))}
 								</select>
 								<div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
 									<svg
