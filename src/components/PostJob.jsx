@@ -1,10 +1,11 @@
 import React from "react";
 import { useContext, useRef } from "react";
 import { JobList } from "../store/job-lists-store";
+import { useNavigate } from "react-router-dom";
 
 const PostJob = () => {
 	const { addJob } = useContext(JobList);
-
+	const navigate = useNavigate();
 	const jobTitleElement = useRef();
 	const companyNameElement = useRef();
 	//const companyLogoElement = useRef();
@@ -52,6 +53,7 @@ const PostJob = () => {
 			jobLocation,
 			jobSkills
 		);
+		navigate("/jobs");
 	};
 
 	return (

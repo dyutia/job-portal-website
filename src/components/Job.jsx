@@ -22,7 +22,7 @@ const Job = ({ company }) => {
 								className="font-semibold cursor-pointer text-lg hover:text-green-600
 								duration-300 mr-1"
 							>
-								{company.name}
+								{company.name} - {company.title}
 							</p>
 							<p>
 								<span className="text-green-600 text-xs font-bold bg-green-100 pl-2 pr-2 pt-1 pb-1 rounded-2xl mr-1">
