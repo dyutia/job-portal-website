@@ -12,7 +12,7 @@ A modern job portal built with React and Tailwind CSS that allows users to searc
 
 ## Video Demo
 <video controls width="800">
-  <source src="videos/job-portal-website-demo.mp4" type="video/mp4">
+  <source src="job-portal-website-demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
