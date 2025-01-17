@@ -11,10 +11,7 @@ A modern job portal built with React and Tailwind CSS that allows users to searc
 ![Screenshot 2025-01-18 003945](https://github.com/user-attachments/assets/8e045f73-a711-4285-92f3-ad0c4f7c1724)
 
 ## Video Demo
-<video controls width="800">
-  <source src="./job-portal-website-demo.mp4" type="video/mp4">
-  Your browser does not support the video tag. [Download the video](./job-portal-website-demo.mp4).
-</video>
+[![Watch the video](https://via.placeholder.com/800x450.png?text=Click+to+watch+the+demo)](https://drive.google.com/file/d/178p3PlvG4HjOXDvFPNjdb86SM5IvL1o-/view?usp=sharing)
 
 ## Features
 
