@@ -4,6 +4,11 @@ A modern job portal built with React and Tailwind CSS that allows users to searc
 
 ## Demo
 ![image](https://github.com/user-attachments/assets/97b684b3-80db-4746-a668-4fce418e4142)
+![Screenshot 2025-01-18 004230](https://github.com/user-attachments/assets/a557b41c-d61a-4911-872b-eaf70623e7b2)
+![Screenshot 2025-01-18 004209](https://github.com/user-attachments/assets/660158c3-07fe-4353-9b92-abb6726ab2f6)
+![Screenshot 2025-01-18 004129](https://github.com/user-attachments/assets/1f5d7586-0fd6-4ed2-bc29-82f0c06e5273)
+![Screenshot 2025-01-18 004045](https://github.com/user-attachments/assets/b187aaa2-c90f-4e0a-a316-ac8d29aa54e5)
+![Screenshot 2025-01-18 003945](https://github.com/user-attachments/assets/8e045f73-a711-4285-92f3-ad0c4f7c1724)
 
 ## Video Demo
 <video controls width="800">
@@ -111,4 +116,6 @@ Employers can post new jobs with:
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
 - [Lucide Icons](https://lucide.dev/)
+- 
+
 
