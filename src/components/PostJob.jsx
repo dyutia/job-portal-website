@@ -64,7 +64,7 @@ const PostJob = () => {
 					<div className="mt-3 mb-3">
 						<select
 							ref={jobTitleElement}
-							class=" border-2 focus:outline-none border-gray-100 rounded-ms  w-full h-10 "
+							className=" border-2 focus:outline-none border-gray-100 rounded-ms  w-full h-10 "
 						>
 							<option value="Web Development">Web Development</option>
 							<option value="Web Designing">Web Designing</option>

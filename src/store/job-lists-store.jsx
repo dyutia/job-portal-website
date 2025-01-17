@@ -4,15 +4,16 @@ export const JobList = createContext({
 	jobList: [],
 	addJob: () => {},
 	filter: () => {},
+	filterJobs: () => {},
 });
 
 const jobListReducer = (currJobList, action) => {
 	let newJobList = currJobList;
+	
 	if (action.type === "ADD_JOB") {
 		newJobList = [action.payload, ...currJobList];
 	} else if (action.type === "FILTER") {
 		newJobList = currJobList.filter((job) => {
-			console.log(action.payload.title);
 			const matchesTitle = action.payload.title
 				? job.title.toLowerCase().includes(action.payload.title)
 				: true;
@@ -23,7 +24,41 @@ const jobListReducer = (currJobList, action) => {
 
 			return matchesTitle && matchesLocation;
 		});
+	} else if (action.type === "FILTER_JOBS") {
+		newJobList = DEFAULT_POST_LIST.filter((job) => {
+			const { company, category, location, jobTypes, salaryRange } = action.payload;
+
+			const matchesCompany = company
+				? job.name.toLowerCase().includes(company.toLowerCase())
+				: true;
+
+			const matchesCategory = category
+				? job.title === category
+				: true;
+
+			const matchesLocation = location
+				? job.location === location
+				: true;
+
+			const matchesJobType = jobTypes.length > 0
+				? jobTypes.includes(job.type)
+				: true;
+
+			let matchesSalary = true;
+			if (salaryRange) {
+				const [min, max] = salaryRange === "25+" 
+					? [25, Infinity] 
+					: salaryRange.split("-").map(Number);
+				
+				matchesSalary = job.minSalary >= min && 
+					(max === Infinity ? true : job.maxSalary <= max);
+			}
+
+			return matchesCompany && matchesCategory && matchesLocation && 
+				matchesJobType && matchesSalary;
+		});
 	}
+	
 	return newJobList;
 };
 
@@ -42,6 +77,14 @@ const JobListProvider = ({ children }) => {
 			},
 		});
 	};
+
+	const filterJobs = (filters) => {
+		dispatchJobList({
+			type: "FILTER_JOBS",
+			payload: filters,
+		});
+	};
+
 	const addJob = (
 		jobTitle,
 		companyName,
@@ -71,11 +114,12 @@ const JobListProvider = ({ children }) => {
 	};
 
 	return (
-		<JobList.Provider value={{ jobList, addJob, filter }}>
+		<JobList.Provider value={{ jobList, addJob, filter, filterJobs }}>
 			{children}
 		</JobList.Provider>
 	);
 };
+
 const DEFAULT_POST_LIST = [
 	{
 		id: "1",
