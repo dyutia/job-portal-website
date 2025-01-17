@@ -3,6 +3,7 @@
 A modern job portal built with React and Tailwind CSS that allows users to search, filter, and apply for jobs, as well as post new job listings.
 
 ## Demo
+![image](https://github.com/user-attachments/assets/97b684b3-80db-4746-a668-4fce418e4142)
 
 ## Features
 
