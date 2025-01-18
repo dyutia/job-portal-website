@@ -32,9 +32,9 @@ const Footer = () => {
 	return (
 		<footer className="bg-[#0f1729]  text-white">
 			<div className="container mx-auto px-4">
-				{/* Main footer content */}
+				
 				<div className="flex flex-col md:flex-row justify-between items-center py-6">
-					{/* Logo */}
+					
 					<div className="mb-4 md:mb-0">
 						<a href="/" className="flex items-center">
 							<img
@@ -46,7 +46,7 @@ const Footer = () => {
 						</a>
 					</div>
 
-					{/* Navigation */}
+					
 					<nav className="flex flex-wrap justify-center gap-6">
 						{navigation.map((item) => (
 							<a
@@ -60,16 +60,16 @@ const Footer = () => {
 					</nav>
 				</div>
 
-				{/* Footer bottom */}
+				
 				<div className="border-t border-gray-800 py-6">
 					<div className="flex flex-col md:flex-row justify-between items-center gap-4">
-						{/* Copyright */}
+						
 						<div className="text-gray-400 text-sm flex items-center">
 							<span>©2025 Jobstack.</span>
 							<Heart className="h-4 w-4 mx-1 text-red-500 inline" />
 						</div>
 
-						{/* Social links */}
+						
 						<div className="flex items-center space-x-4">
 							{socialLinks.map((item) => {
 								const Icon = item.icon;
